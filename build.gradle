@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('http://repo.maven.apache.org/maven2')
+    }
+}
+
+group = 'org.thraex'
+version = '1.0-SNAPSHOT'
+description = 'thraex-cloud-config'
+sourceCompatibility = '1.8'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation 'junit:junit:3.8.1'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
