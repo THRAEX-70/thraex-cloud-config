@@ -11,6 +11,10 @@ repositories {
     }
 }
 
+ext {
+    set('springCloudVersion', "Hoxton.SR6")
+}
+
 group = 'org.thraex'
 version = '1.0-SNAPSHOT'
 description = 'thraex-cloud-config'
@@ -24,4 +28,10 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
